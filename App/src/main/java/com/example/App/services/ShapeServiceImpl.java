@@ -4,7 +4,9 @@ import com.example.App.dao.ResultDao;
 import com.example.App.models.Result;
 import com.example.App.models.Shape;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ShapeServiceImpl implements ShapeService {
 
     @Autowired

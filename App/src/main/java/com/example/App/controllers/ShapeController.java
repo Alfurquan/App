@@ -21,7 +21,7 @@ public class ShapeController {
        return taskId;
     }
 
-    @GetMapping("/results/${taskId}")
+    @GetMapping("/results/{taskId}")
     public Result getResult(@PathVariable String taskId){
         return shapeService.returnResult(Integer.parseInt(taskId));
     }
