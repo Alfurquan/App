@@ -1,6 +1,6 @@
 package com.example.App.models;
 
-public class Rectangle extends Shape{
+public class Rectangle implements Shape{
     private int length;
     private int breadth;
 

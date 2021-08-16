@@ -1,13 +1,10 @@
 package com.example.App.controllers;
 
-import com.example.App.models.Result;
-import com.example.App.models.Shape;
+import com.example.App.models.Task;
+import com.example.App.models.ShapeInput;
 import com.example.App.services.ShapeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ShapeController {
@@ -16,14 +13,14 @@ public class ShapeController {
     ShapeService shapeService;
 
     @PostMapping("/results")
-    public int postShape(Shape shape){
-       int taskId = shapeService.calculateAreaAndSaveResult(shape);
+    public int postShape(@RequestBody ShapeInput shapeInput){
+       int taskId = shapeService.calculateAreaAndSaveResult(shapeInput);
        return taskId;
     }
 
     @GetMapping("/results/{taskId}")
-    public Result getResult(@PathVariable String taskId){
-        return shapeService.returnResult(Integer.parseInt(taskId));
+    public Task getResult(@PathVariable String taskId){
+        return shapeService.returnTask(Integer.parseInt(taskId));
     }
 
 }

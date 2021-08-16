@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Result {
+public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,7 +14,11 @@ public class Result {
     String type;
     double result;
 
-    public Result(String type, double result) {
+    public Task(){
+
+    }
+
+    public Task(String type, double result) {
         this.type = type;
         this.result = result;
     }

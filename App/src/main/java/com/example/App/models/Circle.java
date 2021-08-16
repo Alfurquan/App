@@ -1,6 +1,6 @@
 package com.example.App.models;
 
-public class Circle extends Shape{
+public class Circle implements Shape{
     private int radius;
     private final double PI = 3.14;
 
